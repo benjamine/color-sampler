@@ -1,0 +1,136 @@
+
+.color-sampler ul {
+  position: relative;
+}
+
+.color-sampler li {
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+
+  font-family: sans-serif;
+  font-size: small;
+
+  box-shadow: 1px 1px 10px #ccc;
+  border: 1px solid rgba(55,55,55,0.5);
+  border-radius: 4px 4px;
+  overflow: hidden;
+
+  background-repeat: no-repeat;
+  background-size: 300%;
+  background-position: center center;
+
+  color: white;
+  text-shadow: 0 0 4px black;
+  transform-origin: 0 1000px;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.color-sampler li:hover {
+  border: 2px solid rgba(100,100,100,0.9);
+  overflow: visible;
+}
+
+.color-sampler li:nth-child(1) {
+  transform: rotate(0.3deg);
+  z-index: 9;
+}
+.color-sampler li:nth-child(2) {
+  transform: rotate(0.6deg);
+  z-index: 8;
+}
+.color-sampler li:nth-child(3) {
+  transform: rotate(0.9deg);
+  z-index: 7;
+}
+.color-sampler li:nth-child(4) {
+  transform: rotate(1.2deg);
+  z-index: 6;
+}
+.color-sampler li:nth-child(5) {
+  transform: rotate(1.5deg);
+  z-index: 5;
+}
+.color-sampler li:nth-child(6) {
+  transform: rotate(1.8deg);
+  z-index: 4;
+}
+
+
+.color-sampler:hover li:nth-child(1) {
+  transform: rotate(0.5deg);
+}
+.color-sampler:hover li:nth-child(2) {
+  transform: rotate(1deg);
+}
+.color-sampler:hover li:nth-child(3) {
+  transform: rotate(1.5deg);
+}
+.color-sampler:hover li:nth-child(4) {
+  transform: rotate(2deg);
+}
+.color-sampler:hover li:nth-child(5) {
+  transform: rotate(2.5deg);
+}
+.color-sampler:hover li:nth-child(6) {
+  transform: rotate(3deg);
+}
+
+.color-sampler li.selected,
+.color-sampler:hover li.selected {
+  transform: rotate(0deg);
+  border: 2px solid black;
+  z-index: 20;
+}
+
+.color-sampler.expanded li:nth-child(1) {
+  transform: rotate(0deg);
+}
+.color-sampler.expanded li:nth-child(2) {
+  transform: rotate(3.4deg);
+}
+.color-sampler.expanded li:nth-child(3) {
+  transform: rotate(6.8deg);
+}
+.color-sampler.expanded li:nth-child(4) {
+  transform: rotate(10.2deg);
+}
+.color-sampler.expanded li:nth-child(5) {
+  transform: rotate(13.6deg);
+}
+.color-sampler.expanded li:nth-child(6) {
+  transform: rotate(17deg);
+}
+.color-sampler.expanded li:nth-child(7) {
+  transform: rotate(20.4deg);
+}
+
+#main > div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+}
+
+.selected-image {
+  text-align: center;
+  width: 500px;
+  height: 500px;
+}
+.selected-image img {
+  margin: auto;
+  max-width: 500px;
+  max-height: 500px;
+  transition: all 1s;
+}
+
+.color-name {
+  width: 130px;
+  text-align: center;
+  vertical-align: middle;
+  font-family: sans-serif;
+  font-size: small;
+}
