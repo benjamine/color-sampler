@@ -1,6 +1,9 @@
 
 .color-sampler ul {
   position: relative;
+  min-height: 100px;
+  padding: 0;
+  margin: 10px;
 }
 
 .color-sampler li {
@@ -16,7 +19,7 @@
 
   box-shadow: 1px 1px 10px #ccc;
   border: 1px solid rgba(55,55,55,0.5);
-  border-radius: 4px 4px;
+  border-radius: 2px 2px;
   overflow: hidden;
 
   background-repeat: no-repeat;
@@ -27,11 +30,24 @@
   text-shadow: 0 0 4px black;
   transform-origin: 0 1000px;
   transition: transform 0.3s;
+  transition-timing-function: ease-in-out;
   cursor: pointer;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+    Introduced in IE 10.
+    See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+  */
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.color-sampler li:hover {
+.color-sampler li.hover {
   border: 2px solid rgba(100,100,100,0.9);
+  box-shadow: 2px 2px 10px #889;
   overflow: visible;
 }
 
@@ -109,16 +125,19 @@
   transform: rotate(20.4deg);
 }
 
+
 #main > div {
   display: inline-block;
   vertical-align: top;
-  margin: 10px;
+  margin: 0;
 }
+
 
 .selected-image {
   text-align: center;
   width: 500px;
   height: 500px;
+  max-width: 90%;
 }
 .selected-image img {
   margin: auto;
@@ -129,8 +148,22 @@
 
 .color-name {
   width: 130px;
-  text-align: center;
+  text-align: left;
   vertical-align: middle;
   font-family: sans-serif;
   font-size: small;
+}
+
+.comments ul {
+  padding: 0;
+  color: #888;
+  max-width: 360px;
+}
+
+.touch-device .mouse {
+  display: none;
+}
+
+.mouse-device .touch {
+  display: none;
 }
